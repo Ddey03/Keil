@@ -1,0 +1,9 @@
+;prog to check whether a num is even or odd
+	AREA PROG_26,CODE,READONLY
+ENTRY
+	MOV R0,#NUM;
+	MOVS R1,R0,LSR,#1
+	MOVCS R2,#0XFFFFFFFF;IF ODD
+	LDRCC R2,=0X55555555;ELSE EVEN
+S	B	S
+	END

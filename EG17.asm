@@ -1,0 +1,24 @@
+	;Mask bits from 24-31,Invert bits from 16-23,Set bits from 8-15 to ‘1’
+	AREA PROG_17,CODE,READONLY
+	ENTRY
+START
+	LDR R6, M_WORD
+	LDR R7, I_WORD
+	LDR R8, S_WORD
+	LDR R0, N1
+	AND R1, R0, R6;to mask
+	EOR R2, R0, R7;to invert
+	ORR R3, R0, R8;to set bits
+	LDR R5, =RES
+	STR R1, [R5],#4
+	STR R2, [R5],#4
+	STR R3, [R5],#4
+Here B Here	
+N1 DCD 0x8234FFF
+M_WORD DCD 0x00FFFFFF
+I_WORD DCD 0x00FF0000
+S_WORD DCD 0x0000FF00
+	AREA DATMEM, DATA, READWRITE
+RES SPACE 32
+	END
+	
