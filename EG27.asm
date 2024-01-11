@@ -1,3 +1,4 @@
+;prog to display ring count on (P0.16-P0.23) LEDs(active low)
 IOODIR EQU 0xE0028008 Address for configuring Porto as I/O
 IOOSET EQU 0xE0028004 Register address for setting Porto pins
 IOOCLR EQU 0xE002800C Register address for clearing Porto pins
